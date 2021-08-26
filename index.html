@@ -7,24 +7,31 @@
     <title>Memory Card Game</title>
   </head>
   <body onLoad='app();'>
-    <div class="card-grid">
-      <div class="row row-1">
-        <div class="card card1" id='card1'></div>
-        <div class="card card3" id='card2'></div>
-        <div class="card card6" id='card3'></div>
-        <div class="card card5" id='card4'></div>
+    <div class="table">
+      <div class="card-grid">
+        <div class="row row-1">
+          <div class="card card1" id='card1'></div>
+          <div class="card card3" id='card2'></div>
+          <div class="card card6" id='card3'></div>
+          <div class="card card5" id='card4'></div>
+        </div>
+        <div class="row row-2">
+          <div class="card card5" id='card5'></div>
+          <div class="card card4" id='card6'></div>
+          <div class="card card2" id='card7'></div>
+          <div class="card card6" id='card8'></div>
+        </div>
+        <div class="row row-3">
+          <div class="card card2" id='card9'></div>
+          <div class="card card4" id='card10'></div>
+          <div class="card card3" id='card11'></div>
+          <div class="card card1" id='card12'></div>
+        </div>
       </div>
-      <div class="row row-2">
-        <div class="card card5" id='card5'></div>
-        <div class="card card4" id='card6'></div>
-        <div class="card card2" id='card7'></div>
-        <div class="card card6" id='card8'></div>
-      </div>
-      <div class="row row-3">
-        <div class="card card2" id='card9'></div>
-        <div class="card card4" id='card10'></div>
-        <div class="card card3" id='card11'></div>
-        <div class="card card1" id='card12'></div>
+      <div class="scoreBoard">
+        <h1 class="scoreBoardTitle">Score Board</h1>
+        <h4>Tries: <div class="tryCount"></div></h4>
+        <h4>Matches: <div class="matchCount"></div></h4>
       </div>
     </div>
   <script src="main.js"></script>

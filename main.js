@@ -1,6 +1,13 @@
 const app = () => {
   var cards = document.querySelectorAll('.card');
   var openCards = [];
+  var tryCount = 0;
+  var matchCount = 0;
+
+  var tryCountDisplay = document.querySelector('.tryCount');
+  tryCountDisplay.textContent = tryCount;
+  var matchCountDisplay = document.querySelector('.matchCount');
+  matchCountDisplay.textContent = matchCount;
 
 //////Flip card
   cards.forEach(function (card) {
@@ -9,14 +16,13 @@ const app = () => {
       if (openCards.length <= 2 ) {
         if(openCards.length < 2) {
           if (openCards.length === 1 && openCards[0].id === card.id) {
-            alert('same card clicked twice');
+            alert('Same card clicked twice');
           } else if (openCards.length === 1 && openCards[0].id !== card.id || openCards.length === 0) {
             card.classList.add('open');
             openCards.push(card);
-            console.log('new card added to array');
+            tryCount++
           }
         } else if(openCards.length === 2 && openCards[0].className !== openCards[1].className) {
-          console.log('not a match');
           openCards.forEach(function (openCard) {
             openCard.classList.remove('open');
             openCards = [];
@@ -26,12 +32,23 @@ const app = () => {
             matchedCard.classList.remove('open');
             matchedCard.classList.add('matched');
             openCards = [];
-            console.log('its a match');
+            matchCount++;
           });
         }
       }
+
+      tryCountDisplay.textContent = tryCount / 2;
+      matchCountDisplay.textContent = matchCount / 2;
+
+      if (matchCount == 12) {
+        alert('You won!');
+      }
+
     });
   });
+
+
+
 
 
 
