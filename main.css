@@ -1,0 +1,28 @@
+.card-grid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border: 1px solid pink;
+  background-position: center;
+  background-size: cover;
+}
+
+/*.card1, .card2, .card3, .card4, .card5, .card6 {background-image: none;}*/
+
+.card1.open, .card1.matched {background-image: url('images/bird1.jpg');}
+.card2.open, .card2.matched {background-image: url('images/bird2.jpg');}
+.card3.open, .card3.matched {background-image: url('images/bird3.jpg');}
+.card4.open, .card4.matched {background-image: url('images/bird4.jpg');}
+.card5.open, .card5.matched {background-image: url('images/bird5.png');}
+.card6.open, .card6.matched {background-image: url('images/bird6.jpg');}
