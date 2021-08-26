@@ -17,33 +17,39 @@ const app = () => {
         if(openCards.length < 2) {
           if (openCards.length === 1 && openCards[0].id === card.id) {
             alert('Same card clicked twice');
-          } else if (openCards.length === 1 && openCards[0].id !== card.id || openCards.length === 0) {
+          } else if (card.classList.contains('matched')) {
+            alert('Card already matched');
+          }else if (openCards.length === 1 && openCards[0].id !== card.id || openCards.length === 0) {
             card.classList.add('open');
             openCards.push(card);
             tryCount++
+            if(openCards.length === 2 && openCards[0].className !== openCards[1].className) {
+              setTimeout(function() {
+                openCards.forEach(function (openCard) {
+                  openCard.classList.remove('open');
+                  openCards = [];
+                });
+              }, 1000);
+            } else if (openCards.length === 2 && openCards[0].className == openCards[1].className) {
+              openCards.forEach(function (matchedCard) {
+                matchedCard.classList.remove('open');
+                matchedCard.classList.add('matched');
+                openCards = [];
+                matchCount++;
+              });
+            }
           }
-        } else if(openCards.length === 2 && openCards[0].className !== openCards[1].className) {
-          openCards.forEach(function (openCard) {
-            openCard.classList.remove('open');
-            openCards = [];
-          });
-        } else if (openCards.length === 2 && openCards[0].className == openCards[1].className) {
-          openCards.forEach(function (matchedCard) {
-            matchedCard.classList.remove('open');
-            matchedCard.classList.add('matched');
-            openCards = [];
-            matchCount++;
-          });
         }
       }
-
-      tryCountDisplay.textContent = tryCount / 2;
       matchCountDisplay.textContent = matchCount / 2;
-
-      if (matchCount == 12) {
-        alert('You won!');
+      if(tryCount % 2 == 0) {
+        tryCountDisplay.textContent = tryCount / 2;
       }
 
+      var winMsg = 'Congratulations! It only took you ' + tryCount / 2 + " tries.";
+      if (matchCount == 12) {
+        alert(winMsg);
+      }
     });
   });
 
