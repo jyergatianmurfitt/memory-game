@@ -1,7 +1,13 @@
+body, window, html {
+  padding: none;
+  margin: none;
+}
+
 .table {
   display: flex;
   justify-content: space-around;
   padding-top: 20px;
+  z-index: 1;
 }
 
 .scoreBoard {
@@ -46,6 +52,56 @@
   border: 2px solid crimson;
   background-position: center;
   background-size: cover;
+}
+
+#overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  z-index: 2;
+  padding: none;
+  margin: none;
+  display: none;
+  transition: all 250ms ease-in-out;
+}
+
+.winPage {
+  display: block;
+}
+
+#winMsg {
+  font-size: 90px;
+  display: none;
+  color: #43e86f;
+  text-transform: uppercase;
+  padding: none;
+  margin: none;
+  transform: scale(0);
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transition: all 500ms ease-in-out;
+}
+
+#winParrot {
+  position: absolute;
+  transform: translateX(-110%);
+  transition: all 2000ms ease-in-out;
+  margin-top: 20%;
+  z-index: 3;
+}
+
+#win1 {
+  display: block;
+  margin: auto;
+}
+
+#win2 {
+  display: none;
+  margin: auto;
 }
 
 /*.card1, .card2, .card3, .card4, .card5, .card6 {background-image: none;}*/

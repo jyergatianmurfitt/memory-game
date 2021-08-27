@@ -54,9 +54,32 @@ const app = () => {
         tryCountDisplay.textContent = tryCount / 2;
       }
 
+
+      //Win page layover
       var winMsg = 'Congratulations! It only took you ' + tryCount / 2 + " tries.";
       if (matchCount == 12) {
-        alert(winMsg);
+        var winMsg = document.getElementById('winMsg');
+        var overlay = document.getElementById('overlay');
+        var winParrot = document.getElementById('winParrot');
+        var win1 = document.getElementById('win1');
+        var win2 = document.getElementById('win2');
+
+        setTimeout(function(){
+            winMsg.style.display = 'block';
+            overlay.style.display = 'block';
+            overlay.style.opacity = '0.8';
+        }, 0);
+        setTimeout(function(){
+            winMsg.style.transform = 'scale(1)';
+        }, 10);
+        setTimeout(function(){
+            winMsg.style.transform = 'scale(.8)';
+            winParrot.style.transform = 'translateX(50%)';
+        }, 500);
+        setTimeout(function(){
+            win1.style.display = 'none';
+            win2.style.display = 'block';
+        }, 2500);
       }
     });
   });
