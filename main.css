@@ -112,3 +112,42 @@ body, window, html {
 .card4.open, .card4.matched {background-image: url('images/bird4.jpg');}
 .card5.open, .card5.matched {background-image: url('images/bird5.png');}
 .card6.open, .card6.matched {background-image: url('images/bird6.jpg');}
+
+
+/**************Tablet***************/
+@media only screen and (max-width: 1200px) {
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .table {
+    display: block;
+    margin: auto;
+  }
+
+  .scoreBoard {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .tryCount, .matchCount, h4 {
+    font-size: 22px;
+  }
+
+  #winMsg {
+    font-size: 55px;
+  }
+
+  #winParrot {
+    margin-top: 20%;
+  }
+}
+
+/**************Mobile***************/
+@media only screen and (max-width: 780px) {
+  #winParrot {
+    margin-top: 50%;
+  }
+}

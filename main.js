@@ -73,13 +73,27 @@ const app = () => {
             winMsg.style.transform = 'scale(1)';
         }, 10);
         setTimeout(function(){
-            winMsg.style.transform = 'scale(.8)';
-            winParrot.style.transform = 'translateX(50%)';
-        }, 500);
-        setTimeout(function(){
             win1.style.display = 'none';
             win2.style.display = 'block';
         }, 2500);
+
+
+        if(window.innerWidth > 1200) {
+          setTimeout(function(){
+              winMsg.style.transform = 'scale(.8)';
+              winParrot.style.transform = 'translateX(60%)';
+          }, 500);
+        } else if (window.innerWidth > 780 && window.innerWidth < 1200) {
+          setTimeout(function(){
+              winMsg.style.transform = 'scale(.8)';
+              winParrot.style.transform = 'translateX(40%)';
+          }, 500);
+        } else {
+          setTimeout(function(){
+              winMsg.style.transform = 'scale(.8)';
+              winParrot.style.transform = 'translateX(-20%)';
+          }, 500);
+        }
       }
     });
   });
