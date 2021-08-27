@@ -1,23 +1,37 @@
 .table {
   display: flex;
   justify-content: space-around;
+  padding-top: 20px;
 }
 
 .scoreBoard {
   width: 30%;
+  background-color: tomato;
+  height: 100%;
+  border: dotted gold 10px;
 }
 
 .scoreBoardTitle {
-  font-size: 40px;
+  font-size: 30px;
   font-family: sans-serif;
   text-transform: uppercase;
   font-weight: 300;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.tries, .matches {
+  display: flex;
+  justify-content: center;
 }
 
 .tryCount, .matchCount, h4 {
-  font-size: 28px;
+  font-size: 32px;
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: bolder;
+  padding-left: 5px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .row {
@@ -28,8 +42,8 @@
 .card {
   width: 200px;
   height: 200px;
-  background-color: green;
-  border: 1px solid pink;
+  background-color: darkseagreen;
+  border: 2px solid crimson;
   background-position: center;
   background-size: cover;
 }
