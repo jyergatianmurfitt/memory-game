@@ -10,7 +10,7 @@ The purpose of building this app was to expand my JavaScript experience into acc
 - [JS]
 
 ## Installation
-To install this project simply click the green 'Code' button and download the ZIP file. Save the file to your desired directory and edit the contents in your favourite text editor. In order to edit the .scss files you will need to use a compiler to compile the main.scss to the main.css folder.
+To install this project simply click the green 'Code' button and download the ZIP file. Save the file to your desired directory and edit the contents in your favourite text editor.
 
 ## Contribute
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
